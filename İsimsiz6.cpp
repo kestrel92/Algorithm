@@ -1,18 +1,28 @@
 #include <stdio.h>
 #include <conio.h>
-#include <math.h>
+#include <locale.h>
 main()
 {
-	float x=2.7;
-	x=floor (x);
-	printf("%f \n",x);
-	x=ceil(2.3);
-	printf("%f \n",x);
-	int a=16 , b=sqrt(a);
-	printf("%d \n",b);
-	int taban=3 , us=2;
-	int sonuc=pow(taban,us);
-	printf("%d",sonuc);
+	int sayi=0;
+	printf("Haftanýn gün sayýsýný girin: ");
+	scanf("%d",&sayi);
+	switch(sayi)
+	{
+		case 1:
+			printf("Pazartesi");break;
+			case 2:
+				printf("Salý");break;
+				case 3:
+					printf("Çarþamba");break;
+					case 4:
+						printf("Perþembe");break;
+						case 5:
+							printf("Cuma");break;
+							case 6:
+								printf("Cumartesi");break;
+								case 7:
+									printf("Pazar");break;
+									
+	}
 	getch();
 }
-

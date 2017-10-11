@@ -3,9 +3,17 @@
 #include <locale.h>
 main()
 {
-	int notu=12;
-	float pi=3.14;
-	char harf='A';
-	printf("Notu= %d , Pi=%f , harf=%c 'dir",notu,pi,harf);
+	setlocale(LC_ALL,"Turkish");
+	int sayi1;
+	printf("sayýyý girin: ");
+	scanf("%d",sayi1);
+	if(sayi1%2==0)
+	{
+		printf("SAYI çift");
+	}
+	else
+	{
+		printf("SAYI tek");
+	}
 	getch();
 }

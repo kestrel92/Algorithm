@@ -4,9 +4,26 @@
 main()
 {
 	setlocale(LC_ALL,"Turkish");
-	char kelime[20];
-	printf("Bir kelime giriniz ");
-	gets(kelime);// gets metinsel ifadelerde boþluktan sorasýnýda alabilir ama scanf olarak kullanýlýrsa sadece kelime bazlý alýr
-	printf("Girilen kelime= %s",kelime);
+	char harf;
+	printf("Lütfen bir harf giriþi yapýnýz: ");
+	scanf("%d",&harf);
+	switch(harf)
+	{
+		case'a':
+			printf("a harfine bastýnýz\n");
+			break;
+			case'b':
+				printf("b harfine bastýnýz\n");
+				break;
+				case'c':
+					printf("c harfine bastýnýz\n");
+					break;
+					case'd':
+						printf("d harfine bastýnýz\n");
+						break;
+						default:
+							printf("a,b,c,d  harflerinin dýþýnda bir harfe bastýnýz\n");
+							break;
+	}
 	getch();
 }
