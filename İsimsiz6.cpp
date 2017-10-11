@@ -3,26 +3,15 @@
 #include <locale.h>
 main()
 {
-	int sayi=0;
-	printf("Haftanýn gün sayýsýný girin: ");
-	scanf("%d",&sayi);
-	switch(sayi)
+	setlocale(LC_ALL,"Turkish");
+	float x=0,sonuc=1;
+	printf("Faktöriyeli alýnacak sayýyý giriniz: ");
+	scanf("%f",&x);
+	for(int i=x;i>0;i--)
 	{
-		case 1:
-			printf("Pazartesi");break;
-			case 2:
-				printf("Salý");break;
-				case 3:
-					printf("Çarþamba");break;
-					case 4:
-						printf("Perþembe");break;
-						case 5:
-							printf("Cuma");break;
-							case 6:
-								printf("Cumartesi");break;
-								case 7:
-									printf("Pazar");break;
-									
-	}
-	getch();
+	sonuc=sonuc*i;
+    }
+    printf("Faktöriyel %f ! sonucu %f dir",x,sonuc);
+    getch();
 }
+

@@ -3,17 +3,14 @@
 #include <locale.h>
 main()
 {
-	setlocale(LC_ALL,"Turkish");
-	int sayi1;
-	printf("sayýyý girin: ");
-	scanf("%d",sayi1);
-	if(sayi1%2==0)
-	{
-		printf("SAYI çift");
-	}
-	else
-	{
-		printf("SAYI tek");
-	}
-	getch();
+		setlocale(LC_ALL,"Turkish");
+	    int toplam=0;
+		for (int i=1;i<=10;i++)
+		{
+			toplam++;
+		}
+		printf("Toplam=%d \n",toplam);
+		getch();
 }
+
+	

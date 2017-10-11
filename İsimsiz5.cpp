@@ -4,26 +4,16 @@
 main()
 {
 	setlocale(LC_ALL,"Turkish");
-	char harf;
-	printf("Lütfen bir harf giriþi yapýnýz: ");
-	scanf("%d",&harf);
-	switch(harf)
+	int x,sayac=0;
+	printf("Ýstenilen deðeri giriniz: ");
+	scanf("%d",&x);
+	for(int i=50;i<200;i++)
 	{
-		case'a':
-			printf("a harfine bastýnýz\n");
-			break;
-			case'b':
-				printf("b harfine bastýnýz\n");
-				break;
-				case'c':
-					printf("c harfine bastýnýz\n");
-					break;
-					case'd':
-						printf("d harfine bastýnýz\n");
-						break;
-						default:
-							printf("a,b,c,d  harflerinin dýþýnda bir harfe bastýnýz\n");
-							break;
+		if(i%x==0)
+		{
+			sayac=sayac+1;
+		}
 	}
+	printf("kalansýz bölünen sayý miktarý %d \n",sayac);
 	getch();
 }
