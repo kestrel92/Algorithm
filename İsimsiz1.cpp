@@ -1,15 +1,13 @@
 #include <stdio.h>
 #include <conio.h>
-#include <locale.h>
-main()
-{
-	setlocale(LC_ALL,"Turkish");
-	string a;
-	printf("100 kere yazýlmasýný istediðiniz kelimeyi giriniz:");
-	scanf("%s",a);
-	for (int i=0;i<=100;i++)
-	{
-		printf("%s \n",a);
-	}
+#include <stdlib.h>
+#include <time.h>
+main(){
+	int sayi=0;
+	srand(time(NULL));// bu da bir kalýp yapýdýr.
+	sayi=5+rand()%100;//5 den baþlýyor 105 e kadar ,105 dahil olmayacak þekilde rastgele sayý atýyacak
+	//sayi=3+rand()%5; -- 3 den baþlýyor 3 4 5 6 7 sayýlarý arasýnda rastgele atama yapýyor
+	//sayi=A+rand()%B; þeklinde bir kalýptýr -- A ile A+B arasýnda ama A+B dahil deðildir ama A dahildir.
+	printf("%d \n",sayi);
 	getch();
 }
