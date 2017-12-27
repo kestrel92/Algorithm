@@ -1,19 +1,16 @@
 #include <stdio.h>
 #include <conio.h>
-#include <locale.h>
 main()
 {
-	setlocale(LC_ALL,"Turkish");
-	int deger=0;
-	printf("Bir sayý giriniz: ");
-	scanf("%d",&deger);
-	if(deger%deger==0&&deger%2==0)
+	int son=5;
+	for(int i=0;i<5;i++)
 	{
-		printf("Bu sayý asal sayýdýr.");
-	}
-	else
-	{
-		printf("Bu sayý asal sayý deðildir.");
+		for(int a=1;a<=son;a++)
+		{
+			printf("%d",a);
+		}
+		son--;
+		printf("\n");
 	}
 	getch();
 }

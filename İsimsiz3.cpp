@@ -1,26 +1,21 @@
 #include <stdio.h>
 #include <conio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <locale.h>
-main(){
-	setlocale(LC_ALL,"Turkish");
-	int sayi=0,ort=0,sayac=0,toplam=0;
-	srand(time(NULL));
-	for(int i=0;i<10;i++)
+main()
+{
+	int adet=9,bosluk=1;
+	for(int i=0;i<5;i++)
 	{
-		sayi=67+rand()%115;
-		if(sayi%2==0)
+		for(int a=0;a<bosluk;a++)
 		{
-			printf("Çift sayý: %d \n",sayi);
-			sayac=sayac+1;
-			toplam=toplam+sayi;
-		}
-		else
-		{
-			printf("Tek sayý: %d \n",sayi);
-		}
+		printf(" ");
 	}
-		ort=toplam/sayac;
-		printf("Çift sayýlarýn ortalamasý: %d \n",ort);
+	for(int j=0;j<adet;j++)
+	{
+		printf("*");
+	}
+	adet-=2;
+	bosluk+=2;
+	printf("\n");
+	}
+	getch();
 }
