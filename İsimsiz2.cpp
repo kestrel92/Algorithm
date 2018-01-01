@@ -1,18 +1,27 @@
 #include <stdio.h>
 #include <conio.h>
-#include <string.h>
+#include <stdlib.h>
+#include <time.h>
 
 main()
 {
-	char kelime[100];
-	printf("Bir kelime giriniz: ");
-	gets(kelime);
-	int uzunluk =0;
-	uzunluk = strlen(kelime);
-	printf("\n%d harf",uzunluk);
-	for(int i=0;i<uzunluk;i++)
+	int matris[10][10];
+	int sayi=1;
+	for(int i=0;i<10;i++)
 	{
-		printf("\n%c",kelime[i]);
+		for(int j=0;j<10;j++)
+		{
+			matris[i][j]=sayi;
+			sayi++;
+		}
+	}
+	for(int i=0;i<10;i++)
+	{
+		for(int j=0;j<10;j++)
+		{
+			printf("%d\t",matris[i][j]);
+		}
+		printf("\n");
 	}
 	getch();
 }

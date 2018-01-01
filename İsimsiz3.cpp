@@ -1,22 +1,26 @@
 #include <stdio.h>
 #include <conio.h>
-#include <string.h>
-#include <locale.h>
+#include <stdlib.h>
+#include <time.h>
 
 main()
 {
-	setlocale(LC_ALL,"Turkish");
-	char cumle[100];
-	printf("Bir cümle giriniz: ");
-	gets(cumle);
-	int sayac=0;
-	for(int i=0;i<strlen(cumle);i++)
+	int matris[5][3],carp=1;
+	srand(time(NULL));
+	for(int i=0;i<5;i++)
 	{
-		if(cumle[i]=='a' || cumle[i]=='A')
-		{
-			sayac++;
-		}
+			matris[i][0]=5+rand()%10;
+			printf("Bir sayý giriniz: ");
+			scanf("%d",&matris[i][1]);
+			carp=matris[i][0]*matris[i][1];
+			matris[i][2]=carp;
 	}
-	printf("\nGirilen cümlede %i adet a harfi vardýr.",sayac);
-	getch();
+		for(int i=0;i<5;i++)
+	{
+		for(int j=0;j<3;j++)
+		{
+			printf("%d\t",matris[i][j]);
+		}
+		printf("\n");
+	}
 }

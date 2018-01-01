@@ -1,23 +1,38 @@
 #include <stdio.h>
 #include <conio.h>
-#include <string.h>
-#include <locale.h>
+#include <stdlib.h>
+#include <time.h>
 
 main()
 {
-	setlocale(LC_ALL,"Turkish");
-	char cumle[100];
-	printf("Bir Cümle Giriniz: ");
-	gets(cumle);
-	int sayac=0;
-	for(int i=0;i<strlen(cumle);i++)
+	int matris[10][10];
+	int sayi=1,ktoplam=0,stoplam=0,toplam,sayac=0;
+	for(int i=0;i<10;i++)
 	{
-		printf("%c",cumle[i]);
-		if(cumle[i]==' ')
+		for(int j=0;j<10;j++)
 		{
-			printf("\n");
-			sayac++;
+			matris[i][j]=sayi;
+			sayi++;
 		}
 	}
-	printf("\nCümledeki bu  kadar kelime vardýr %i",sayac+1);
+	for(int i=0;i<10;i++)
+	{
+		for(int j=0;j<10;j++)
+		{
+			printf("%d\t",matris[i][j]);
+		}
+		printf("\n");
+	}
+	for(int t=0;t<=9;t++)
+	{
+		ktoplam=matris[t][t]+ktoplam;
+	}
+	for(int s=9;s>=0;s--)
+	{
+		stoplam=matris[sayac][s]+stoplam;
+		sayac++;
+	}
+	toplam=stoplam+ktoplam;
+	printf("%d kosegenlerin toplami",toplam);
+	getch();
 }
