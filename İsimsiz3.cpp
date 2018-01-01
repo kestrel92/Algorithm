@@ -1,26 +1,25 @@
 #include <stdio.h>
 #include <conio.h>
-#include <stdlib.h>
-#include <time.h>
-
+void goster(int a,int b);
 main()
 {
-	int matris[5][3],carp=1;
-	srand(time(NULL));
-	for(int i=0;i<5;i++)
+	int x,y;
+	printf("Birinci sayýyý giriniz: ");
+	scanf("%i",&x);
+	printf("Ýkinci sayýyý giriniz: ");
+	scanf("%i",&y);
+	goster(x,y);
+}
+void goster(int a,int b)
+{
+	if(a>b)
 	{
-			matris[i][0]=5+rand()%10;
-			printf("Bir sayý giriniz: ");
-			scanf("%d",&matris[i][1]);
-			carp=matris[i][0]*matris[i][1];
-			matris[i][2]=carp;
+		printf("Birinci sayi ikinci sayýdan daha büyük %i",a);
+		
 	}
-		for(int i=0;i<5;i++)
+	else
 	{
-		for(int j=0;j<3;j++)
-		{
-			printf("%d\t",matris[i][j]);
-		}
-		printf("\n");
+		printf("Ýkici sayi birinci sayýdan daha büyük %i",b);	
 	}
+	
 }

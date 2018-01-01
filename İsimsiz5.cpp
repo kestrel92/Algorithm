@@ -1,23 +1,26 @@
 #include <stdio.h>
 #include <conio.h>
-#include <string.h>
-
-main() // Soru girilen cümle içerisinde en uzun kelimeyi bulup yazdýracak
+#include <stdlib.h>
+#include <time.h>
+void ekran(int adet);
+int tahmin(int tahmin);
+int rastgele();
+main()
 {
-	char cumle[100],enuzunkelime[30];
-	printf("Bir cumle giriniz: ");
-	gets(cumle);
-	int sayac=0,uzunluk=0,enuzun=0,kelime;
-	for(int i=0;i<strlen(cumle);i++)
-	{
-		if(cumle[i]==' ');
-		{
-			sayac++;
-			kelime=cumle[i];
-		}
-		if(kelime>uzunluk)
-		{
-			enuzun=kelime;
-		}
-	}
+	int sayi=0,adet=0;
+	sayi=rastgele();
+	adet=tahmin(sayi);
+	ekran(adet);
+	getch();
+}
+int rastgele()
+{
+	srand(time(NULL));
+	int rastgele1;
+	rastgele1=1+rand()%99;
+	return rastgele1;
+}
+int tahmin(int)
+{
+	
 }

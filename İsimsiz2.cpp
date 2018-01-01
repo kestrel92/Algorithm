@@ -1,27 +1,25 @@
+//1den 100 e kadar olan sayýlarýn ortalamasýný bulacak
 #include <stdio.h>
 #include <conio.h>
-#include <stdlib.h>
-#include <time.h>
+
+int ort();
 
 main()
 {
-	int matris[10][10];
-	int sayi=1;
-	for(int i=0;i<10;i++)
+	int ortalama=0;
+	ortalama = ort();
+	printf("Sayilarýn ortalamasý: %d",ort);
+}
+
+int ort()
+{
+	int toplam=0;
+	int ortalamasi=0;
+	for(int i=0;i<100;i++)
 	{
-		for(int j=0;j<10;j++)
-		{
-			matris[i][j]=sayi;
-			sayi++;
-		}
+		toplam+=i;
 	}
-	for(int i=0;i<10;i++)
-	{
-		for(int j=0;j<10;j++)
-		{
-			printf("%d\t",matris[i][j]);
-		}
-		printf("\n");
-	}
-	getch();
+	ortalamasi=toplam/100;
+	return ortalamasi;
+	
 }
