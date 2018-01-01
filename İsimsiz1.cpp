@@ -1,16 +1,12 @@
 #include <stdio.h>
 #include <conio.h>
+#include <string.h>
+
 main()
 {
-	int deger=1;
-	for(int i=0;i<7;i++)
-	{
-		for(int j=0;j<deger;j++)
-		{
-			printf("*");
-		}
-		printf("\n");
-		deger++;
-	}
+	char *str1="Bilgisayar Programi";//*str1 olunca maksimum alabileceði karakter sayýsý kadar bellekten yer ayýrýyor( * ) iþareti yüzünden str1 deðiþken isimi 
+	char str2[50]="Bilgisyar Programi";//bellekten 50 karakterlik alan almýþ oluyor
+	printf("%i",strlen(str1));
+	printf("\n%i",strlen(str2));
 	getch();
 }

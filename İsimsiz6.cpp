@@ -1,36 +1,17 @@
 #include <stdio.h>
 #include <conio.h>
+
 main()
 {
-	int bosluk=1,adet=9;
-	int bosluk1=5,adet1=1;
-	for(int i=0;i<5;i++)
+	int sayi[10];
+	for(int i=0;i<10;i++)
 	{
-		for(int i=0;i<bosluk;i++)
-		{
-			printf(" ");
-		}
-		for(int j=0;j<adet;j++)
-		{
-			printf("*");
-		}
-		adet-=2;
-		bosluk++;
-		printf("\n");
+		sayi[i]=i+10;//SAYÝ[0]
 	}
-	for(int i=0;i<5;i++)
+	for(int i=0;i<10;i++)
 	{
-		for(int i=0;i<bosluk1;i++)
-		{
-			printf(" ");
-		}
-		for(int j=0;j<adet1;j++)
-		{
-			printf("*");
-		}
-		adet+=2;
-		bosluk--;
-		printf("\n");
+		printf("%i .indeks elemaninin degeri = %i \n",i,sayi[i]);
+		
 	}
 	getch();
 }

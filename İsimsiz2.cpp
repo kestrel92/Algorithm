@@ -1,16 +1,18 @@
 #include <stdio.h>
 #include <conio.h>
+#include <string.h>
+
 main()
 {
-	int deger=7;
-	for(int i=7;i>=0;i--)
+	char kelime[100];
+	printf("Bir kelime giriniz: ");
+	gets(kelime);
+	int uzunluk =0;
+	uzunluk = strlen(kelime);
+	printf("\n%d harf",uzunluk);
+	for(int i=0;i<uzunluk;i++)
 	{
-		for(int j=deger;j>=0;j--)
-		{
-			printf("*");
-		}
-		printf("\n");
-		deger--;
+		printf("\n%c",kelime[i]);
 	}
 	getch();
 }

@@ -1,21 +1,23 @@
 #include <stdio.h>
 #include <conio.h>
+#include <string.h>
+#include <locale.h>
+
 main()
 {
-	int bosluk=5,adet=1;
-	for(int i=0;i<5;i++)
+	setlocale(LC_ALL,"Turkish");
+	char cumle[100];
+	printf("Bir Cümle Giriniz: ");
+	gets(cumle);
+	int sayac=0;
+	for(int i=0;i<strlen(cumle);i++)
 	{
-		for(int a=bosluk;a>0;a--)
+		printf("%c",cumle[i]);
+		if(cumle[i]==' ')
 		{
-			printf(" ");
+			printf("\n");
+			sayac++;
 		}
-		for(int j=0;j<adet;j++)
-		{
-			printf("*");
-		}
-		adet+=2;
-		bosluk--;
-		printf("\n");
 	}
-	getch();
+	printf("\nCümledeki bu  kadar kelime vardýr %i",sayac+1);
 }

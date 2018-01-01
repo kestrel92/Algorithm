@@ -1,21 +1,22 @@
 #include <stdio.h>
 #include <conio.h>
+#include <string.h>
+#include <locale.h>
+
 main()
 {
-	int adet=9,bosluk=1;
-	for(int i=0;i<5;i++)
+	setlocale(LC_ALL,"Turkish");
+	char cumle[100];
+	printf("Bir cümle giriniz: ");
+	gets(cumle);
+	int sayac=0;
+	for(int i=0;i<strlen(cumle);i++)
 	{
-		for(int a=0;a<bosluk;a++)
+		if(cumle[i]=='a' || cumle[i]=='A')
 		{
-		printf(" ");
+			sayac++;
+		}
 	}
-	for(int j=0;j<adet;j++)
-	{
-		printf("*");
-	}
-	adet-=2;
-	bosluk+=2;
-	printf("\n");
-	}
+	printf("\nGirilen cümlede %i adet a harfi vardýr.",sayac);
 	getch();
 }

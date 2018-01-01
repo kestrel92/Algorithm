@@ -1,25 +1,23 @@
 #include <stdio.h>
 #include <conio.h>
+#include <stdlib.h>
+#include <time.h>
+
 main()
 {
-	int bosluk=1,son=5;
+	srand(time(NULL));
+	int dizi[5];
 	for(int i=0;i<5;i++)
 	{
-		for(int b=0;b<bosluk;b++)
+		if(i==0)
 		{
-			printf(" ");
+		    dizi[0]=100+rand()%899;
 		}
-		for(int t=son;t>=1;t--)
-		{
-			printf("%d",t);
-		}
-		for(int s=1;s<=son;s++)
-		{
-			printf("%d",s);
-		}
-		son--;
-		bosluk++;
-		printf("\n");
+		else
+		{	
+		dizi[i]=dizi[i-1]+rand()%(1000-dizi[i-1]);
+	    }  
+		printf("\n%i",dizi[i]);
 	}
 	getch();
 }
