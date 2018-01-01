@@ -1,35 +1,36 @@
 #include <stdio.h>
 #include <conio.h>
 #include <locale.h>
-struct dogum_tarihi
-{
-	int gun,ay,yil;	
-};
-struct sahis_bilgileri{
-	char isim[50];
-	int boy;
-	struct dogum_tarihi tarih;
-}kisi[3];
+#include <stdlib.h>
+#include <string.h>
 main()
 {
 	setlocale(LC_ALL,"Turkish");
-	printf("Kiþi bilgileri*** \n");
-	for(int i=0;i<3;i++)
+	FILE *ogrencinotlar;
+	char ad[10];
+	char isim1[20];
+	int notu=0,nosu=0,enbuyuk=0,enkucuk=100,sayac=0,ort=0,top=0;
+	int notu1[4];
+	ogrencinotlar=fopen("ogrencinotlar.txt","r");
+	while(!feof(ogrencinotlar))
 	{
-		printf("\nKiþinin adý: ");
-		scanf("%s",&kisi[i].isim);
-		printf("\nKiþinin boyu: ");
-		scanf("%i",&kisi[i].boy);
-		printf("\nKiþinin dogum tarihi/GÜN: ");
-		scanf("%i",&kisi[i].tarih.gun);
-		printf("\nKiþinin dogum tarihi/AY: ");
-		scanf("%i",&kisi[i].tarih.ay);
-		printf("\nKiþinin dogum tarihi/YIL: ");
-		scanf("%i",&kisi[i].tarih.yil);
-	}
-	for(int i=0;i<3;i++)
-	{
-		printf("%i . kisinin adý %s , boyu %i, dogumtarihi %i/%i/%i 'dir.\n",i+1,kisi[i].isim,kisi[i].boy,kisi[i].tarih.gun,kisi[i].tarih.ay,kisi[i].tarih.yil);
-	}
+		fscanf(ogrencinotlar,"%i\t%s\t%i\n",&nosu,&ad,&notu);
+		top+=notu;
+	    if(enbuyuk<notu)
+	    {
+	    	enbuyuk=notu;
+	    	strcpy(isim1,ad);
+		}
+		
+		if(enkucuk>=notu)
+		{
+			enkucuk=notu;
+		}
+		sayac++;
+    }
+	ort=top/sayac;
+	printf("En yüksek not: %i\n En düþük not: %i\n Not ortalamasý: %i\n",enbuyuk,enkucuk,ort);
+	printf("En yüksek notu alan kiþi = %s",isim1);
+	fclose(ogrencinotlar);
+	getch();
 }
-

@@ -1,17 +1,19 @@
 #include <stdio.h>
 #include <conio.h>
-struct tarih
-{
-	int gun,ay,yil;
-}deger;
-void goster(struct tarih ifade)
-{
-	printf("Tarih : %d/%d/%d\n",ifade.gun,ifade.ay,ifade.yil);
-}
+#include <locale.h>
 main()
 {
-	deger.gun=11;
-	deger.ay=12;
-	deger.yil=2017;
-	goster(deger);
+	setlocale(LC_ALL,"Turkish");
+	FILE *ogrencinotlar;
+	char ad[10];
+	int notu=0,nosu=0;
+	ogrencinotlar=fopen("ogrencinotlar.txt","r");
+	while(!feof(ogrencinotlar))
+	{
+		fscanf(ogrencinotlar,"%i\t%s\t%i\n",&nosu,&ad,&notu);
+		printf("%i\t%s\t%i\n",nosu,ad,notu);
+		
+	}
+	fclose(ogrencinotlar);
+	getch();
 }

@@ -1,23 +1,18 @@
 #include <stdio.h>
 #include <conio.h>
-struct kayit
-{
-	char ad[10];
-	int no;
-	int sinif;
-};
+#include <locale.h>
 main()
 {
-	struct kayit ogrenci;
-	printf("ogrenci Nosu : ");
-	scanf("%i",&ogrenci.no);
-	printf("Ogrenci adi : ");
-	scanf("%i",&ogrenci.ad);
-	printf("Ogrenci sinifi : ");
-	scanf("%i",&ogrenci.sinif);
-	printf("\nGirilen bilgiler /****");
-	printf("\nNo  : %i",ogrenci.no);
-	printf("\nAdi  : %i",ogrenci.ad);
-	printf("\nSinif  : %i",ogrenci.sinif);
-	
+	setlocale(LC_ALL,"Turkish");
+	FILE *yaz ;
+	int x,y;
+	yaz=fopen("deneme.txt","w");
+	printf("1. sayýyý girin: ");
+	scanf("%i",&x);
+	printf("2.sayýyý girin: ");
+	scanf("%i",&y);
+	fputs("iki sayýnýn toplamý \n",yaz);
+	fprintf(yaz,"%i + %i = %i \n",x,y,x+y);
+	fclose(yaz);
+	printf("Bilgiler kaydedildi");
 }
