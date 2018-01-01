@@ -1,25 +1,17 @@
 #include <stdio.h>
 #include <conio.h>
-void goster(int a,int b);
+struct tarih
+{
+	int gun,ay,yil;
+}deger;
+void goster(struct tarih ifade)
+{
+	printf("Tarih : %d/%d/%d\n",ifade.gun,ifade.ay,ifade.yil);
+}
 main()
 {
-	int x,y;
-	printf("Birinci sayıyı giriniz: ");
-	scanf("%i",&x);
-	printf("İkinci sayıyı giriniz: ");
-	scanf("%i",&y);
-	goster(x,y);
-}
-void goster(int a,int b)
-{
-	if(a>b)
-	{
-		printf("Birinci sayi ikinci sayıdan daha büyük %i",a);
-		
-	}
-	else
-	{
-		printf("İkici sayi birinci sayıdan daha büyük %i",b);	
-	}
-	
+	deger.gun=11;
+	deger.ay=12;
+	deger.yil=2017;
+	goster(deger);
 }

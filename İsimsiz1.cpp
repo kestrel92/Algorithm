@@ -1,18 +1,23 @@
 #include <stdio.h>
 #include <conio.h>
-
-int topla(int a,int b);
-
+struct kayit
+{
+	char ad[10];
+	int no;
+	int sinif;
+};
 main()
 {
-	int sayitoplam=0;
-	sayitoplam=topla(5,10);
-	printf("Ýki sayýnýn toplamý %d: ",sayitoplam);
-	getch();
-}
-
-int topla(int a, int b)
-{
-	int toplam=a+b;
-	return toplam;
+	struct kayit ogrenci;
+	printf("ogrenci Nosu : ");
+	scanf("%i",&ogrenci.no);
+	printf("Ogrenci adi : ");
+	scanf("%i",&ogrenci.ad);
+	printf("Ogrenci sinifi : ");
+	scanf("%i",&ogrenci.sinif);
+	printf("\nGirilen bilgiler /****");
+	printf("\nNo  : %i",ogrenci.no);
+	printf("\nAdi  : %i",ogrenci.ad);
+	printf("\nSinif  : %i",ogrenci.sinif);
+	
 }
